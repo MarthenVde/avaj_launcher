@@ -1,7 +1,7 @@
 package avaj_launcher.src.aircraft;
 
-public class Balloon extends Aircraft implements Flyable {
-    Balloon(String name, Coordinates coordinates) {
+public class Helicopter extends Aircraft implements Flyable {
+    Helicopter(String name, Coordinates coordinates) {
         super(name, coordinates);
     }
 
