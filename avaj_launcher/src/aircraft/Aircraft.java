@@ -1,4 +1,4 @@
-package avaj_launcher.src.aircraft;
+package aircraft;
 
 public class Aircraft {
     protected long _id;

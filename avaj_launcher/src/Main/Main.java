@@ -1,6 +1,6 @@
-package avaj_launcher.src.Main;
-import avaj_launcher.src.aircraft.Aircraft;
-import avaj_launcher.src.aircraft.Coordinates;
+package Main;
+import aircraft.Aircraft;
+import aircraft.Coordinates;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;

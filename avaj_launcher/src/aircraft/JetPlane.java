@@ -1,9 +1,9 @@
-package avaj_launcher.src.aircraft;
+package aircraft;
 
-import avaj_launcher.src.aircraft.Coordinates;
+import aircraft.Coordinates;
 
 public class JetPlane extends Aircraft implements Flyable {
-    JetPlane(String name, Coordinates Coordinates) {
+    JetPlane(String name, Coordinates coordinates) {
         super(name, coordinates);
     }
 

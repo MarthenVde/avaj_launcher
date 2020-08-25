@@ -1,4 +1,4 @@
-package avaj_launcher.src.aircraft;
+package aircraft;
 
 public class Helicopter extends Aircraft implements Flyable {
     Helicopter(String name, Coordinates coordinates) {
