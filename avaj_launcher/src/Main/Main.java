@@ -1,28 +1,41 @@
 package Main;
-import aircraft.Aircraft;
-import aircraft.Coordinates;
+import aircraft.AircraftFactory;
+import aircraft.Flyable;
+import weather.WeatherTower;
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(final String[] args) throws Exception {
-        System.out.println("Hello, World!");
-        // Coordinates coord = new Coordinates(1,2,3);
-        // Aircraft a1 = new Aircraft("a1", coord);
-        // Aircraft a2 = new Aircraft("a2", coord);
-        // Aircraft a3 = new Aircraft("a3", coord);
+        // String[] simData = getSimData();
 
+        WeatherTower mainTower = new WeatherTower();
+
+        List<Flyable> flyables = new ArrayList<>();
+
+        int simCycles = 2;
+
+        for (int i = 0; i < simCycles; i++) {
+            String name = "_B" + i;
+            Flyable flyable = AircraftFactory.newAircraft("Balloon", name, 0, 0, 0);
+            // Flyable aircraft = new AircraftFactory.newAircraft("Balloon", name, 0, 0, 0);
+            flyables.add(flyable);
+        }
+
+        Iterator<Flyable> flyableIterator = flyables.iterator();
+        while (flyableIterator.hasNext()) {
+            flyableIterator.next().registerTower(mainTower);
+        }
         
-        
-        String[] simData = getSimData();
-        
-        
-        // Read simulator.txt
-        
-        // System.out.println(a1._id);
-        // System.out.println(a2._id);
-        // System.out.println(a3._id);
+        for (int i = 0; i < simCycles; i++) {
+            mainTower.changeWeather();
+        }
+
+        // Read number of times sim should run
+        // Read in flyables
+        // Create list of 
     }
     
     private static String[] getSimData() {
