@@ -1,7 +1,5 @@
 package aircraft;
 
-import aircraft.Coordinates;
-
 public class AircraftFactory {
     public static Flyable newAircraft(String type, String name, int longitude, int latitude, int height) {
         Coordinates coord = new Coordinates(longitude, latitude, height);

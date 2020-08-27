@@ -1,4 +1,5 @@
-package Main;
+package weather;
+
 import aircraft.AircraftFactory;
 import aircraft.Flyable;
 import weather.WeatherTower;
@@ -17,7 +18,7 @@ public class Main {
 
         int simCycles = 2;
 
-        for (int i = 0; i < simCycles; i++) {
+        for (int i = 0; i < 1; i++) {
             String name = "_B" + i;
             Flyable flyable = AircraftFactory.newAircraft("Balloon", name, 0, 0, 0);
             // Flyable aircraft = new AircraftFactory.newAircraft("Balloon", name, 0, 0, 0);

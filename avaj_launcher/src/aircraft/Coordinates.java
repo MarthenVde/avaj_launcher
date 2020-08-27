@@ -1,25 +1,32 @@
 package aircraft;
 
+import javax.lang.model.util.ElementScanner6;
+
 public class Coordinates {
-    private int _longitude;
-    private int _latitude;
-    private int _height;
+    private int longitude;
+    private int latitude;
+    private int height;
 
     Coordinates(int longitude, int latitude, int height) {
-        _longitude = longitude;
-        _latitude = latitude;
-        _height = height;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.height = height;
+
+        if (height < 0)
+            this.height = 0;
+        else if (height > 100)
+            this.height = 100;
     }
 
     public int getLongitude() {
-        return _longitude;
+        return this.longitude;
     }
 
     public int getLatitude() {
-        return _latitude;
+        return this.latitude;
     }
 
     public int getHeight() {
-        return _height;
+        return this.height;
     }
 }
