@@ -9,7 +9,7 @@
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}",
-            "args": ["simulation.txt"]
+            "args": ["scenario.txt"]
         },
         {
             "type": "java",
@@ -17,7 +17,7 @@
             "request": "launch",
             "mainClass": "weather.Simulate",
             "projectName": "avaj_launcher_c6c6a855",
-            "args": ["simulation.txt"]
+            "args": ["scenario.txt"]
         }
     ]
 }

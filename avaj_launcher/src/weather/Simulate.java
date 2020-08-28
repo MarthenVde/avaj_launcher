@@ -3,14 +3,16 @@ package weather;
 import aircraft.AircraftFactory;
 import aircraft.Flyable;
 import weather.WeatherTower;
+import weather.Logger;
 
 import java.io.*;
 import java.util.*;
 
 public class Simulate  {
+    public static PrintWriter writer;
 
     public static void main(final String[] args) throws Exception {
-        // private static PrintWriter writer;
+        String outFilename = "simulation.txt";
         
         if (args.length < 1) {
             System.err.println("Error! no simulation file found");
@@ -18,11 +20,15 @@ public class Simulate  {
             WeatherTower mainTower = new WeatherTower();
             List<Flyable> flyables = new ArrayList<>();
             
-            
+            if (args[0] == outFilename) {
+                System.err.println("Error! can't use output filename");
+            }
+             
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(args[0]));
                 String currentLine = reader.readLine();
                 int simCycles = Integer.parseInt(currentLine.replaceAll("\\s+",""));
+                Logger.initFile(outFilename);
 
                 if (simCycles < 1) {
                     System.err.print("Error! Invalid ammount of cycles");
@@ -57,13 +63,13 @@ public class Simulate  {
                     System.err.println("Error! no aircraft found in file");
                 }
 
-            } catch (IOException | NumberFormatException | ArrayIndexOutOfBoundsException e) {
-                System.err.println("Error! file doesn't exist or file is invalid");
-            } 
-            // finally {
-        
-            // }
-
+            } catch (IOException e) {
+                System.err.println("Error! file doesn't exist");
+            } catch (ArrayIndexOutOfBoundsException  | NumberFormatException e) {
+                System.err.println("Error! file is invalid");
+            } finally {
+                Logger.closeLogger();
+            }
         }
     }
 }
