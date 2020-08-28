@@ -5,8 +5,8 @@ public class AircraftFactory {
         Coordinates coord = new Coordinates(longitude, latitude, height);
 
         switch (type) {
-            case "Balloon":
-                return new Balloon(name, coord);
+            case "Baloon":
+                return new Baloon(name, coord);
             case "Helicopter":
                 return new Helicopter(name, coord);
             case "JetPlane":
