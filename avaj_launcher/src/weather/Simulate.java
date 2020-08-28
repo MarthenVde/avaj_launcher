@@ -2,8 +2,6 @@ package weather;
 
 import aircraft.AircraftFactory;
 import aircraft.Flyable;
-import weather.WeatherTower;
-import weather.Logger;
 
 import java.io.*;
 import java.util.*;
@@ -50,6 +48,7 @@ public class Simulate  {
                         System.exit(1);
                     }
                 }
+                reader.close();
 
                 if (flyables.size() >= 1) {
                     Iterator<Flyable> flyableIterator = flyables.iterator();

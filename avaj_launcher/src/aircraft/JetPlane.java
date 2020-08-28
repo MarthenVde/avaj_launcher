@@ -1,6 +1,5 @@
 package aircraft;
 
-import aircraft.Coordinates;
 import weather.WeatherTower;
 import weather.Logger;
 

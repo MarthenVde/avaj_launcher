@@ -1,7 +1,5 @@
 package aircraft;
 
-import javax.lang.model.util.ElementScanner6;
-
 public class Coordinates {
     private int longitude;
     private int latitude;
