@@ -62,7 +62,8 @@ public class Simulate  {
                 } else {
                     System.err.println("Error! no aircraft found in file");
                 }
-
+            } catch (NullPointerException e) {
+                System.err.println("Error! empty ");
             } catch (IOException e) {
                 System.err.println("Error! file doesn't exist");
             } catch (ArrayIndexOutOfBoundsException  | NumberFormatException e) {
